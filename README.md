@@ -63,4 +63,4 @@ This research was supported by the Spanish Ministerio de Ciencia e Innovación t
 This work is part of the I+D+i PID2020-118447RA-I00 ([MultiScore](https://sites.google.com/view/multiscore-project)) project, funded by MCIN/AEI/10.13039/501100011033. Computational resources were provided by the Valencian Government and FEDER funding through IDIFEDER/2020/003.
 
 ## License
-This work is under a [MIT](LICENSE) license.
+This work is under a [GNU GPL v3](LICENSE) license.
