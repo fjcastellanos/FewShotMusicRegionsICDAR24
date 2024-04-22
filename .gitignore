@@ -2,6 +2,18 @@
 __pycache__/
 *.py[cod]
 *$py.class
+models/
+results/
+tests/
+datasets/
+train/
+pruebas/
+*.sh
+nohup.out
+logs/
+test/
+regions/
+
 
 # C extensions
 *.so
