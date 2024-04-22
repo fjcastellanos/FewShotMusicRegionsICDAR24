@@ -1,41 +1,24 @@
 #!/bin/bash
 
-MODE="train"
-GPU=0
+MODE="train" # "test" or "train"
+GPU=0  # index of the GPU to be used
 TYPE="CNN"
 
 
-AUG="random rot scale"  # 'all', 'none', 'flipH', 'flipV', 'wb', 'expos', 'rot', 'scale', 'blur', 'dropout'
-
-WINDOW_W=256
-WINDOW_H=256
-
-LAYERS=4
-FILTERS=64
-KERNEL_SIZE=5
-DROPOUT=0.2
-
-PAGES_TRAIN=-1
-NUMBER_PATCHES=2048
-NUMBER_ANNOTATED_PATCHES=1
+AUG="random rot scale"  # 'random', 'flipH', 'flipV', 'rot', 'scale'
 
 
-db_train_txt="datasets/Folds/b-59-850/fold0/train.txt"
-db_val_txt="datasets/Folds/b-59-850/fold0/val.txt"
-db_test_txt="datasets/Folds/b-59-850/fold0/test.txt" 
-CLASSES="staff empty_staff"
-IOU_THRESHOLD=0.5
+db_train_txt="datasets/Folds/b-59-850/fold0/train.txt"  #List of JSON data (from MURET) to be used for training
+db_val_txt="datasets/Folds/b-59-850/fold0/val.txt"      #List of JSON data (from MURET) to be used for validation
+db_test_txt="datasets/Folds/b-59-850/fold0/test.txt"    #List of JSON data (from MURET) to be used for testing. 
+CLASSES="staff empty_staff"  #Classes to be considered.
+IOU_THRESHOLD=0.5 # Threshold to consider a prediction as True Positive
 
-window_w="256" 
-window_h="256" 
 
-VERTICAL_REDUCTION="0.4"
-
-EPOCHS=200
-BATCH_SIZE=32
-VERBOSE=1
-PATHRESULTS="results/res_final_experiment_with_adapt_size.txt"
-OPTIONS="-adapt-size-patch"    #--test
+EPOCHS=200 # Maximum number of epochs.
+BATCH_SIZE=32 # Size of the batch
+PATHRESULTS="results/res_experiment.txt" # Output file to save results
+OPTIONS="-adapt-size-patch"    #"--test",  "-adapt-size-patch"
 
 aug_serial=${AUG// /.}
 aug_serial=${aug_serial////-}
@@ -71,16 +54,7 @@ for FILTERS in 32; do
 											output_file="logs/${MODE}/${output_file}"                              
 											echo $output_file
 
-                                            let COUNTER++
-
-                                            echo ${COUNTER}"\n"${RUN}
-
-                                            if [[ $NUMBER_PATCHES -eq 512 && $PAGES_TRAIN -eq 1 && $NUMBER_ANNOTATED_PATCHES -eq -1 &&  "$source" = "b-59-850" && $VERTICAL_REDUCTION -eq 0.0 ]] ; then
-                                                let RUN=1
-                                            fi
-                                            if [ ${RUN} -eq 1 ] ; then
-                                                echo 'RUN!!!\n'
-                                                python -u main.py \
+                                            python -u main.py \
                                                         -db_train_txt ${SOURCE_PATH_TRAIN} \
                                                         -db_val_txt ${SOURCE_PATH_VAL} \
                                                         -db_test_txt ${SOURCE_PATH_TEST} \
@@ -104,8 +78,7 @@ for FILTERS in 32; do
                                                         ${OPTIONS} \
                                                         &> ${output_file}
 
-												echo "Finished\n"
-                                            fi
+											echo "Finished\n"
                                         done
                                     done
                                 done
