@@ -29,18 +29,45 @@
 
 ## About
 
-This work presents a neural network approach for layout analysis of music score images to extract staff regions. The work focusses on cases with limited amount of training data, a recurrent issue in the context of music.
-
+This work presents a neural network approach for layout analysis of music score images to extract staff regions. The work focuses on cases with a limited amount of training data, a recurrent issue in the context of music.
+The proposal includes a masking layer to ignore the non-annotated pixels and a random oversampling around the annotated data to train the model even with a few annotated staves.
 
 ## How To Use
 
 To run the code, you'll need to meet certain requirements which are specified in the [`Dockerfile`](Dockerfile). Alternatively, you can set up a virtual environment if preferred.
 
-Once you have prepared your environment (either a Docker container or a virtual environment), you are ready to begin. Execute the [`experiments/run.py`](experiments/run.py) script to replicate the experiments from our work:
+Once you have prepared your environment (either a Docker container or a virtual environment), you are ready to begin. Execute the [`sh_run_experiments.sh`](sh_run_experiments.sh) script to replicate the experiments from our work:
 
-```python
-python experiments/run.py
 ```
+./sh_run_experiments.sh
+```
+The script includes a series of loops that can be configured according to the experiments. These loops makes reference to arguments of the Python program that runs the experiments.
+Parameters:
+  * **-db_train_txt** `Path to file with the list of the paths to the JSON files for training (extracted from MURET)`
+  * **-db_val_txt** `Path to file with the list of the paths to the JSON files for validation (extracted from MURET)`
+  * **-db_test_txt** `Path to file with the list of the paths to the JSON files for testing (extracted from MURET)`
+  * **-cls** `List of classes to be considered` (**Default:** *"staff empty_staff"*)
+  * **-aug** `List of augmentation techniques to be considered. The **random** value represents the oversampling proposal.` (**Default:** *random rot scale*) (**Other:** *flipV flipH*)
+  * **-window_w** `Width of the window considered to extract patch samples` (**Default:** *256*)
+  * **-window_h** `Height of the window considered to extract patch samples` (**Default:** *256*)
+  * **-l** `Number of layers for the encoder and the decoder.` (**Default:** *3*)
+  * **-f** `Number of filters of the convolutional layers.` (**Default:** *32*)
+  * **-k** `Kernel size.` (**Default:** *3*)
+  * **-drop** `Dropout rate.` (**Default:** *0.4*)
+  * **-npatches** `Number of random patches extracted per epoch.` (**Default:** *2048*)
+  * **-n_annotated_patches** `Number of annotated staves considered in the experiment. **-1** indicates using all the complete images.` (**Default:** *-1*)
+  * **-pages_train** `Number of training pages. *-1* represents using all the pages.` (**Default:** *-1*)
+  * **-e** `Maximum number of epochs.` (**Default:** *200*)
+  * **-b** `Batch size.` (**Default:** *32*)
+  * **-gpu** `Index of the GPU employed for the experiment.` (**Default:** *0*)
+  * **-res** `Path to an output file to save the results.`
+  * **-iou** `Threshold for IoU to consider a prediction as True Positive. Values between 0 and 1.` (**Default:** *0.5*)
+  * **-vr** `Vertical reduction proportion for each staff. Value between 0 and 1.` (**Default:** *0.4*)
+  * **-adapt-size-patch** `Flag to activate the scale adaptation of the images. This is used to adapt the size of the images to the window size. This should be activated.`
+  * **--test** `It activates the testing mode. In this case, the script does not train the model. First use the script without this parameter.` 
+
+
+
 
 ## Citations
 
