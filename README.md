@@ -14,7 +14,7 @@
   <img src="https://img.shields.io/badge/Tensorflow-%FFFFFF.svg?style=flat&logo=Tensorflow&logoColor=orange&color=white" alt="Tensorflow">
   <!--<img src="https://img.shields.io/badge/PyTorch-%23EE4C2C.svg?style=flat&logo=PyTorch&logoColor=white" alt="PyTorch">-->
   <!--<img src="https://img.shields.io/badge/-Lightning-792ee5?logo=pytorchlightning&logoColor=white" alt="Lightning">-->
-  <img src="https://img.shields.io/static/v1?label=License&message=MIT&color=blue" alt="License">
+  <img src="https://img.shields.io/static/v1?label=License&message=GNU GPL v3&color=blue" alt="License">
 </p>
 
 
@@ -66,7 +66,7 @@ Parameters:
   * **-adapt-size-patch** `Flag to activate the scale adaptation of the images. This is used to adapt the size of the images to the window size. This should be activated.`
   * **--test** `It activates the testing mode. In this case, the script does not train the model. First use the script without this parameter.` 
 
-
+The datasets must be organized to obtain a folder structure with a JSON folder with the JSON files and a SRC folder with the images. The images and their respective JSON ground truth should have the same name except for the extension of the JSON files, which includes the **.json** extension to the name of the image.
 
 
 ## Citations
