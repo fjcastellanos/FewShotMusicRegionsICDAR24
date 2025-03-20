@@ -89,5 +89,15 @@ This research was supported by the Spanish Ministerio de Ciencia e Innovación t
 
 This work is part of the I+D+i PID2020-118447RA-I00 ([MultiScore](https://sites.google.com/view/multiscore-project)) project, funded by MCIN/AEI/10.13039/501100011033. Computational resources were provided by the Valencian Government and FEDER funding through IDIFEDER/2020/003.
 
+<a href="https://www.ciencia.gob.es/" target="_blank"><img src="https://www.dlsi.ua.es/~jgallego/projects/DOReMI/images/logo_min.png" style="height:100px" alt="Ministerio de Ciencia e Innovación"></a> 
+&nbsp;
+<a href="https://commission.europa.eu/strategy-and-policy/recovery-plan-europe_es" target="_blank"><img src="https://www.dlsi.ua.es/~jgallego/projects/DOReMI/images/logo_ue.png" style="height:100px" alt="Financiado por la Unión Europea, fondos NextGenerationEU"></a>
+<br>
+<a href="https://planderecuperacion.gob.es/" target="_blank"><img src="https://www.dlsi.ua.es/~jgallego/projects/DOReMI/images/logo_plan_recuperacion_transformacion_resiliencia.png" style="height:100px" alt="Plan de Recuperación, Transformación y Resiliencia"></a>
+&nbsp;
+<a href="https://www.aei.gob.es/" target="_blank"><img src="https://www.dlsi.ua.es/~jgallego/projects/DOReMI/images/logo_aei.png" style="height:100px" alt="Agencia Estatal de Investigación"></a>
+
+<br/>
+
 ## License
 This work is under a [GNU GPL v3](LICENSE) license.
