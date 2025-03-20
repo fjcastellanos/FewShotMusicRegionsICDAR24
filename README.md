@@ -87,8 +87,6 @@ The datasets must be organized to obtain a folder structure with a JSON folder w
 ## Acknowledgments
 This research was supported by the Spanish Ministerio de Ciencia e Innovación through the I+D+i DOREMI project (TED2021-132103A-I00), funded by MCIN/AEI/10.13039/501100011033. 
 
-This work is part of the I+D+i PID2020-118447RA-I00 ([MultiScore](https://sites.google.com/view/multiscore-project)) project, funded by MCIN/AEI/10.13039/501100011033. Computational resources were provided by the Valencian Government and FEDER funding through IDIFEDER/2020/003.
-
 <a href="https://www.ciencia.gob.es/" target="_blank"><img src="https://www.dlsi.ua.es/~jgallego/projects/DOReMI/images/logo_min.png" style="height:100px" alt="Ministerio de Ciencia e Innovación"></a> 
 &nbsp;
 <a href="https://commission.europa.eu/strategy-and-policy/recovery-plan-europe_es" target="_blank"><img src="https://www.dlsi.ua.es/~jgallego/projects/DOReMI/images/logo_ue.png" style="height:100px" alt="Financiado por la Unión Europea, fondos NextGenerationEU"></a>
