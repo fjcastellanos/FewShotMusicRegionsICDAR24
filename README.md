@@ -75,12 +75,12 @@ The datasets must be organized to obtain a folder structure with a JSON folder w
 @inproceedings{Castellanos2024fewRegions,
   title     = {{A region-based approach for layout analysis of music score images in scarce data scenarios}},
   author    = {Francisco J. Castellanos, Juan P. Martínez-Esteso, Alejandro Galán-Cuenca, Antonio Javier Gallego},
-  journal   = {{18th IAPR International Conference on Document Analysis and Recognition (ICDAR)}},
-  volume    = {},
-  pages     = {},
+  booktitle   = {{18th IAPR International Conference on Document Analysis and Recognition (ICDAR), August 30–September 4}},
+  pages     = {58–75},
   year      = {2024},
-  publisher = {},
-  doi       = {},
+  publisher = {Springer-Verlag},
+  doi       = {10.1007/978-3-031-70546-5_4},
+  location = {Athens, Greece}
 }
 ```
 
